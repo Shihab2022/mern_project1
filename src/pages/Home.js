@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import img1 from '../accets/img1.jpg'
 import img2 from '../accets/img2.jpg'
 import img3 from '../accets/img3.jpg'
 import img4 from '../accets/img4.jpg'
+import BuyProduct from './BuyProduct';
 const Home = () => {
+    const navigate=useNavigate()
+    const [buy,setBuy]=useState(false)
+    const [data,setData]=useState({})
+    const handleNavigate=(d)=>{
+        setBuy(true)
+        setData(d)
+        navigate('/buyProduct')
+
+    }
+    console.log(data)
     const fakeData=[
                     {
                         id:"21232",
@@ -65,14 +77,18 @@ const Home = () => {
                 <img className='h-[60%] w-[100%] rounded-md' src={d.img} alt="" />
                 <p className='text-2xl py-1 font-semibold'>{d.name}</p>
                 <p className=''>{d.description}</p>
-                <div className='grid grid-cols-3 gap-5 py-5'>
-                <button className='bg-white  px-3 py-1 rounded-md'> Remove</button>
-                <button className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-3 py-1 rounded-md'> Update</button>
-                <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:duration-700 hover:from-pink-500 hover:to-yellow-500 px-3 py-1 rounded-md'> Delete</button>
+                <div className='flex justify-center items-center py-5'>
+                <button onClick={()=>handleNavigate(d)}  className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-7 py-2 text-white rounded-md'> Buy</button>
+
+               
                  </div>
                 </div>)    
                 }
             </div>
+
+             {
+               buy&& <BuyProduct ></BuyProduct>
+                }
         </div>
     );
 };
