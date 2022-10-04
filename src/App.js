@@ -14,7 +14,7 @@ function App() {
  <Navbar/>
  <Routes>
   <Route path='/' element={<Home/>}></Route>
-  <Route path='/about' element={<RequireAuth><Product/></RequireAuth>}></Route>
+  <Route path='/product' element={<RequireAuth><Product/></RequireAuth>}></Route>
   <Route path='/login' element={<Login/>}></Route>
   <Route path='/register' element={<Register/>}></Route>
   <Route path='/buyProduct' element={<BuyProduct/>}></Route>

@@ -1,19 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
-import BuyProduct from './BuyProduct';
-
 const Product = () =>{const navigate=useNavigate()
-const [buy,setBuy]=useState(false)
-const [data,setData]=useState({})
 const handleNavigate=(d)=>{
-    setBuy(true)
-    setData(d)
     navigate('/buyProduct')
-
 }
-console.log(data)
 const fakeData=[
                 {
                     id:"21232",
@@ -64,7 +55,7 @@ const fakeData=[
                     description:"Learn how to perform the following tasks using the Node.js driver in the Fundamentals section"
                 },
                 {
-                    id:"21213e2",
+                    id:"21w213e2",
                     name:"Fourth Image",
                     img:'https://i.ibb.co/myz1hmC/lunch3.png',
                     description:"Learn how to perform the following tasks using the Node.js driver in the Fundamentals section"
@@ -76,23 +67,19 @@ return (
         <div className='grid grid-cols-4 gap-5'>
             {
             fakeData.map(d=>
-            <div className='bg-gradient-to-r from-cyan-300 to-cyan-700 h-[450px] rounded-t-xl p-5'>
+            <div key={d.id} className='bg-gradient-to-r from-cyan-300 to-cyan-700 h-[450px] rounded-t-xl p-5'>
             
             <img className='h-[60%] w-[100%] rounded-md' src={d.img} alt="" />
             <p className='text-2xl py-1 font-semibold'>{d.name}</p>
             <p className=''>{d.description}</p>
             <div className='flex justify-center items-center py-5'>
-            <button onClick={()=>handleNavigate(d)}  className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-7 py-2 text-white rounded-md'> Buy</button>
+            <button onClick={()=>handleNavigate()}  className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-7 py-2 text-white rounded-md'> Buy</button>
 
            
              </div>
             </div>)    
             }
         </div>
-
-         {
-           buy&& <BuyProduct ></BuyProduct>
-            }
     </div>
 );}
 
