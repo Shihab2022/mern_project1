@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [login,setLogin]=useState(true)
   let user = localStorage.getItem("user");
-    if(user===true){
-      setLogin(false)
-    }
+    // if(user===true){
+    //   setLogin(true)
+    // }
 
 
+    console.log(user, login)
 const signOut=()=>{
   console.log('click')
   setLogin(false)
@@ -26,6 +27,9 @@ const signOut=()=>{
           <div className="container md:px-20 px-2  flex flex-wrap justify-between items-center mx-auto">
           <p className='text-xl'><span className='text-2xl font-serif font-semibold'>T</span>ask</p>
      
+     {
+      login || user ? console.log('login is true') : console.log('login is false')
+     }
      {  login ?
           <button onClick={()=>signOut()} className="flex md:order-2 ">  
           Log Out
