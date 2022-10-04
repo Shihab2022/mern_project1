@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useCheckUser from '../../hooks/useCheckUser';
 
 const Login = () => {
     const [tError,setTError]=useState(false)
     const [userData,setUserValue]=useState({})
-    const navigate=useNavigate()
     const [user,error]=useCheckUser(userData)
+
+    const navigate=useNavigate()
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
 const handleLoginFrom=(e)=>{
     const email = e.target.email.value
@@ -24,7 +27,7 @@ const handleLoginFrom=(e)=>{
 
 }
 if(user){
-    navigate('/')
+    navigate(from, { replace: true });
 }
 
 

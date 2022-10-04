@@ -1,8 +1,10 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const navigate=useNavigate()
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
   const handleRegisterFrom = (e) => {
     const email = e.target.email.value
     const name = e.target.name.value
@@ -19,7 +21,7 @@ const Register = () => {
   .then((response) => response.json())
   .then((data) => {
     if(data.acknowledged){
-        navigate('/')
+        navigate(from, { replace: true });
     }
   })
   .catch((error) => {
