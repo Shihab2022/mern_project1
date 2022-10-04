@@ -3,18 +3,18 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const navigate=useNavigate()
-  const handleFrom = (e) => {
+  const handleRegisterFrom = (e) => {
     const email = e.target.email.value
     const name = e.target.name.value
   const password = e.target.password.value
-  const addProduct ={name,email,password}
+  const addUser ={name,email,password}
 
   fetch('http://localhost:5000/register', {
   method: 'POST', // or 'PUT'
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify(addProduct),
+  body: JSON.stringify(addUser),
 })
   .then((response) => response.json())
   .then((data) => {
@@ -40,7 +40,7 @@ const Register = () => {
             <div className="divide-y divide-gray-200">
               {/* <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7"> */}
               <form
-                onSubmit={handleFrom}
+                onSubmit={handleRegisterFrom}
                 className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7"
               >
                 <div className="relative">
