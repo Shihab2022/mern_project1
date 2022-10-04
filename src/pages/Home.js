@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home = () =>  {
     return (
         <div className='h-screen flex flex-col justify-center items-center '>
-            <p className='font-serif font-bold text-transparent  text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Welcome to  First Food Resturent </p>
+            <p className='font-serif font-bold text-transparent  text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Welcome to  First Food Restaurant </p>
 
             <Link to='/product' className='bg-gradient-to-r from-violet-500 to-fuchsia-500 px-10 text-xl text-white my-5 py-3 rounded-md'>All Product</Link>
         </div>

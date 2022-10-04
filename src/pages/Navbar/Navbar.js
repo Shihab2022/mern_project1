@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const menu = [
   { name: "Home", href: "/", id: "293oc02c" },
-  { name: "About", href: "/about", id: "2aod030vkd" },
-  { name: "Service", href: "/service", id: "8aod030vk" },
-  { name: "Contact", href: "/contact", id: "8aod0123565" },
+  { name: "About", href: "/default", id: "2aod030vkd" },
+  { name: "Service", href: "/default", id: "8aod030vk" },
+  { name: "Contact", href: "/default", id: "8aod0123565" },
 ];
 
 const Navbar = () => {
