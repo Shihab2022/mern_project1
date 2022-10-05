@@ -12,8 +12,8 @@ const Reset = () => {
     const newPassword = e.target.newPassword.value
     const resetUser ={name,email,password,newPassword}
   
-//   fetch('https://dry-island-38030.herokuapp.com/reset', {
-  fetch('http://localhost:5000/reset', {
+  fetch('https://dry-island-38030.herokuapp.com/reset', {
+//   fetch('http://localhost:5000/reset', {
   method: 'POST', // or 'PUT'
   headers: {
     'Content-Type': 'application/json',
