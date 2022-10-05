@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Login/Register';
 import RequireAuth from './pages/Login/RequireAuth';
+import Reset from './pages/Login/Reset';
 import Navbar from './pages/Navbar/Navbar';
 import Product from './pages/Product';
 
@@ -18,6 +19,7 @@ function App() {
   <Route path='/login' element={<Login/>}></Route>
   <Route path='/register' element={<Register/>}></Route>
   <Route path='/default' element={<DefaultPage/>}></Route>
+  <Route path='/reset' element={<Reset/>}></Route>
 
  </Routes>
  

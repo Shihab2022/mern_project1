@@ -1,7 +1,7 @@
 import  { useEffect, useState } from 'react';
 
 const useCheckUser = (addUser) => {
-    console.log(addUser.email)
+    // console.log(addUser.email)
     const [user,setUser]=useState(false)
     const [error,setError]=useState(false)
 
@@ -26,7 +26,7 @@ const useCheckUser = (addUser) => {
                   setError(false)
               }
               else if(data.acknowledged===false){
-                console.log(data)
+                // console.log(data)
                   setError(true)
               }
             })
