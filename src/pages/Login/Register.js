@@ -11,8 +11,8 @@ const Register = () => {
   const password = e.target.password.value
   const addUser ={name,email,password}
 
-  fetch('https://dry-island-38030.herokuapp.com/register', {
-//   fetch('http://localhost:5000/register', {
+  // fetch('https://dry-island-38030.herokuapp.com/register', {
+  fetch('http://localhost:5000/register', {
   method: 'POST', // or 'PUT'
   headers: {
     'Content-Type': 'application/json',

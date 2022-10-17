@@ -8,8 +8,8 @@ const useCheckUser = (addUser) => {
     useEffect(()=>{
         if(addUser.email !==undefined || addUser.password!==undefined){
 
-        fetch('https://dry-island-38030.herokuapp.com/login', {
-        // fetch('http://localhost:5000/login', {
+        // fetch('https://dry-island-38030.herokuapp.com/login', {
+        fetch('http://localhost:5000/login', {
             method: 'POST', // or 'PUT'
             headers: {
               'Content-Type': 'application/json',
